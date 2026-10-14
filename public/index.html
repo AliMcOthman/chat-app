@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chat-App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container">
+
+    <header class="app-header">
+        <div class="logo">💬</div>
+        <div>
+            <h1>Chatraum</h1>
+            <p>Dein öffentlicher Chat</p>
+        </div>
+        <span class="status">
+            <span class="status-dot"></span>
+            Online
+        </span>
+    </header>
+
+    <main class="chat-layout">
+
+        <section class="main-panel">
+
+            <div class="panel-header">
+                <div>
+                    <h2>Öffentlicher Chat</h2>
+                    <p>Schreibe mit allen im Raum</p>
+                </div>
+            </div>
+
+            <form id="loginForm" class="login-form">
+                <h3>Willkommen im Chat!</h3>
+                <p>Gib deinen Namen ein, um teilzunehmen.</p>
+
+                <label for="username">Dein Username</label>
+                <input
+                        id="username"
+                        type="text"
+                        placeholder="z. B. Ali"
+                        autocomplete="nickname"
+                        required
+                >
+
+                <button type="submit">Chat betreten →</button>
+            </form>
+
+            <section id="chatArea">
+
+                <div class="messages-heading">
+                    <h3>Nachrichten</h3>
+                    <span>Live-Chat</span>
+                </div>
+
+                <ul id="messages"></ul>
+
+                <form id="messageForm">
+                    <input
+                            id="messageInput"
+                            type="text"
+                            placeholder="Nachricht schreiben ..."
+                            autocomplete="off"
+                            required
+                    >
+                    <button type="submit" aria-label="Nachricht senden">
+                        Senden ↑
+                    </button>
+                </form>
+
+            </section>
+        </section>
+
+        <aside class="sidebar">
+            <div class="sidebar-heading">
+                <h2>Im Chat</h2>
+                <span class="people-icon">👥</span>
+            </div>
+
+            <p class="sidebar-description">
+                Benutzer, die gerade dabei sind
+            </p>
+
+            <ul id="users"></ul>
+
+            <div class="sidebar-footer">
+                <span class="status-dot"></span>
+                Alle Nachrichten sind öffentlich.
+            </div>
+        </aside>
+
+    </main>
+
+    <footer class="app-footer">
+
+    </footer>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="client.js"></script>
+
+</body>
+</html>
+
